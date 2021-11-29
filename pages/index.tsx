@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import CenterScreen from "../components/Center";
 import Sidebar from "../components/Sidebar";
 
 const Home: NextPage = () => {
@@ -12,9 +12,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="flex">
         <Sidebar />
-        {/* Music List */}
+        <CenterScreen />
       </main>
 
       <div>{/* Player */}</div>

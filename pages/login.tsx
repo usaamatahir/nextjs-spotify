@@ -23,11 +23,7 @@ const Login: FC<LoginProviderProps> = ({ providers }) => {
       {Object.values(providers).map((provider) => (
         <div key={provider.name}>
           <button
-            onClick={() =>
-              signIn(provider.id, { callbackUrl: "/" })
-                .then((data: any) => console.log("DAta ==> ", data))
-                .catch((err: any) => console.log("Error ===> ", err))
-            }
+            onClick={() => signIn(provider.id, { callbackUrl: "/" })}
             className="bg-[#18D860] text-white p-5 rounded-full"
           >
             Login with {provider.name}

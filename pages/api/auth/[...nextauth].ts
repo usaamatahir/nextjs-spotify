@@ -9,7 +9,6 @@ async function refreshAccessToken(token: any) {
 
     // Refresh the access token and rename the body as refreshedToken
     const { body: refreshedToken }: any = await spotifyApi.refreshAccessToken();
-    console.log("REFRESHED TOKEN IS ", refreshedToken);
 
     return {
       ...token,
@@ -41,7 +40,6 @@ export default NextAuth({
   },
   callbacks: {
     async jwt({ token, account, user }: any) {
-      console.log("JWT CALLBACK", token, account, user);
       // If the user is new, we'll need to create a new token
       if (account && user) {
         return {
@@ -55,17 +53,14 @@ export default NextAuth({
 
       // Return the token as-is if it's not expired
       if (Date.now() < token.accessTokenExpires) {
-        console.log("EXISTING TOKEN IS VALID");
         return token;
       }
 
       // Refresh the access token if it's expired
-      console.log("ACCESS TOKEN HAS EXPIRED");
       return await refreshAccessToken(token);
     },
 
     async session({ session, token }: any) {
-      console.log("SESSION CALLBACK", session, token);
       session.user.accessToken = token.accessToken;
       session.user.refreshToken = token.refreshToken;
       session.user.username = token.username;
