@@ -2,6 +2,7 @@ import {
   HeartIcon,
   HomeIcon,
   LibraryIcon,
+  LogoutIcon,
   PlusCircleIcon,
   RssIcon,
   SearchIcon,
@@ -31,15 +32,8 @@ const Sidebar = () => {
 
   console.log(playlistId);
   return (
-    <div className="text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-200 overflow-y-scroll scrollbar-hide h-screen max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex">
+    <div className="text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-200 overflow-y-scroll scrollbar-hide h-screen max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex pb-36">
       <div className="space-y-4">
-        <button
-          className="flex items-center space-x-2 hover:text-white cursor-pointer"
-          onClick={() => signOut()}
-        >
-          <HomeIcon className="h-5 w-5" />
-          <p>Log out</p>
-        </button>
         <button className="flex items-center space-x-2 hover:text-white cursor-pointer">
           <HomeIcon className="h-5 w-5" />
           <p>Home</p>
@@ -64,6 +58,13 @@ const Sidebar = () => {
         <button className="flex items-center space-x-2 hover:text-white cursor-pointer">
           <RssIcon className="h-5 w-5" />
           <p>Your Episodes</p>
+        </button>
+        <button
+          className="flex items-center space-x-2 hover:text-white cursor-pointer"
+          onClick={() => signOut()}
+        >
+          <LogoutIcon className="h-5 w-5" />
+          <p>Log out</p>
         </button>
         <hr className="border-t-[0.1px] border-gray-900" />
 

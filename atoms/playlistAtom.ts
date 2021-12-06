@@ -6,21 +6,24 @@ interface Image {
   width?: number | undefined;
 }
 
+export interface Track {
+  id: string;
+  name: string;
+  artists: { name: string }[];
+  album: {
+    name: string;
+    images?: Image[];
+  };
+  duration_ms: number;
+  uri: string;
+}
+
 export interface Items {
   is_local: boolean;
-  track: {
-    id: string;
-    name: string;
-    artists: { name: string }[];
-    album: {
-      name: string;
-      images?: Image[];
-    };
-    duration_ms: number;
-    uri: string;
-  };
+  track: Track;
   type?: string;
 }
+
 export interface Playlist {
   collaborative: boolean;
   description: string | null;
