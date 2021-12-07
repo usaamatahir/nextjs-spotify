@@ -25,4 +25,4 @@ npm install && npm run dev
 yarn && yarn dev
 ```
 
-and if you like this project give this repository a star. Thanks
+and if you like the project give this repository a star. Thanks
